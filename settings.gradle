@@ -1,3 +1,4 @@
 rootProject.name = 'java-wyzwanie'
 include 'Phone'
+include 'Flight'
 
