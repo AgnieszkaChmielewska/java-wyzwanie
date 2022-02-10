@@ -53,8 +53,9 @@ public class Main {
         int getNewPriceOfNewPhone = newPhoneHigherPrice.extraCost + newPhone.price;
         System.out.println("Higher price of New phone "+getNewPriceOfNewPhone+" PLN");
 
-        phone.displayEvenNumbers(3,9);
-
+ //       phone.displayEvenNumbers(3,9);
+//        phone.isDivided(4,18);
+        phone.getNumber(5,-2);
     }
 }
 class MobilePhone{
@@ -114,7 +115,27 @@ class MobilePhone{
      }
    }
 
+    public void isDivided(int min,int max){
+        int isExecuted = 0;
+        for(int i=min; i<=max; i++){
+            if(i%3==0) {
+                isExecuted = isExecuted +1;
+ //          System.out.println(i);
+            } else if(i%5==0){
+                isExecuted= isExecuted+1;
+ //               System.out.println(i);
+            }
+        }
+        System.out.println(isExecuted +" numbers are divisible by 3 or 5");
+    }
+
+    public void getNumber( int max, int min){
+    for (int number=max; number>=min; number--){
+        System.out.println(number);
+        }
+    }
 }
+
 class ExtraCost{
     int extraCost;
 
