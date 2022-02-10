@@ -53,9 +53,10 @@ public class Main {
         int getNewPriceOfNewPhone = newPhoneHigherPrice.extraCost + newPhone.price;
         System.out.println("Higher price of New phone "+getNewPriceOfNewPhone+" PLN");
 
- //       phone.displayEvenNumbers(3,9);
-//        phone.isDivided(4,18);
+        phone.displayEvenNumbers(3,9);
+        phone.isDivided(4,18);
         phone.getNumber(5,-2);
+        phone.getEvenSum(5,9);
     }
 }
 class MobilePhone{
@@ -133,6 +134,17 @@ class MobilePhone{
     for (int number=max; number>=min; number--){
         System.out.println(number);
         }
+    }
+
+    public void getEvenSum(int min, int max){
+        int shoudBeAdded = 0;
+        for (int item=min; item<9; item++){
+            if(item%2==0){
+//                System.out.println(item);
+                shoudBeAdded= shoudBeAdded+item;
+            }
+        }
+        System.out.println(shoudBeAdded);
     }
 }
 
