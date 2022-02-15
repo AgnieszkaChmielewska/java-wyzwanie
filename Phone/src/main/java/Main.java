@@ -53,10 +53,10 @@ public class Main {
         int getNewPriceOfNewPhone = newPhoneHigherPrice.extraCost + newPhone.price;
         System.out.println("Higher price of New phone "+getNewPriceOfNewPhone+" PLN");
 
-        phone.displayEvenNumbers(3,9);
-        phone.isDivided(4,18);
-        phone.getNumber(5,-2);
-        phone.getEvenSum(5,9);
+        //phone.displayEvenNumbers(3,9);
+        phone.isDivided(4,23451);
+       // phone.getNumber(5,-2);
+        //phone.getEvenSum(5,9);
     }
 }
 class MobilePhone{
