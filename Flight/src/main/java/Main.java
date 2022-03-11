@@ -1,18 +1,23 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args){
-    Flight wawToDub = new Flight("Warsaw", "Dublin");
-    Flight wawToPmi = new Flight("Warsaw", "Palma De Mallorca");
-    Flight wawToPar = new Flight("Warsaw", "Paris");
-    wawToDub.displayFlightOrigin();
-    wawToPar.displayFlightOrigin();
-    wawToPmi.displayFlightOrigin();
+        FlightDatabase flight = new FlightDatabase();
+        flight.checkIfFlightsExist("Dublin", "Madrid");
 
-    String WawDub = wawToDub.getFlightDirection();
-    System.out.println(WawDub);
-    String WawPmi = wawToPmi.getFlightDirection();
-    System.out.println(WawPmi);
-    String WawPar = wawToPar.getFlightDirection();
-    System.out.println(WawPar);
+        //Flight wawToDub = new Flight("Warsaw", "Dublin");
+    //Flight wawToPmi = new Flight("Warsaw", "Palma De Mallorca");
+   // Flight wawToPar = new Flight("Warsaw", "Paris");
+   // wawToDub.displayFlightOrigin();
+  //  wawToPar.displayFlightOrigin();
+  //  wawToPmi.displayFlightOrigin();
+
+   // String WawDub = wawToDub.getFlightDirection();
+  //  System.out.println(WawDub);
+  //  String WawPmi = wawToPmi.getFlightDirection();
+ //   System.out.println(WawPmi);
+ //   String WawPar = wawToPar.getFlightDirection();
+ //   System.out.println(WawPar);
     }
 }
 
@@ -34,5 +39,33 @@ class Flight{
 
     public void displayFlightOrigin(){
         System.out.println("Flight from " +this.departure+ " to " + this.arrival );
+    }
+}
+
+class FlightDatabase {
+    ArrayList<Flight> flights = new ArrayList<Flight>();
+
+    public FlightDatabase() {
+        this.flights.add(new Flight("Warsaw", "Dublin"));
+        this.flights.add(new Flight("Paris", "Berlin"));
+        this.flights.add(new Flight("Wien", "Dresno"));
+        this.flights.add(new Flight("Warsaw", "Tokyo"));
+        this.flights.add(new Flight("Madrid", "Porto"));
+        this.flights.add(new Flight("Lisbona", "Dublin"));
+        this.flights.add(new Flight("Warsaw", "Lviv"));
+    }
+
+    public void checkIfFlightsExist(String start, String end) {
+        boolean notExist = true;
+        // Flight element = flights.get(0);
+        // System.out.println(element);
+        for (int i = 0; i < flights.size(); i++) {
+            Flight flight = this.flights.get(i);
+            if (start.equals(flight.departure) && end.equals(flight.arrival)) {
+                System.out.println(flight.departure + " " + flight.arrival + "exist");
+                notExist  = false;  }
+
+        }
+        System.out.println("Flight with given parameters not exist");
     }
 }
